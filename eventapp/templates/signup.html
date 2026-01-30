@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+{% block content %}
+<h2>Signup</h2>
+
+<form method="post" action="/signup_user/">
+    {% csrf_token %}
+    <input type="text" name="fname" placeholder="First Name" required>
+    <input type="text" name="lname" placeholder="Last Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="pass" placeholder="Password" required>
+    <input type="password" name="conpass" placeholder="Confirm Password" required>
+    <button type="submit">Create Account</button>
+</form>
+
+{% endblock %}
+</body>
+</html>

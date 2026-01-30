@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+{% block content %}
+<h2>Edit Event</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="title" value="{{ event.title }}" required>
+    <textarea name="description" required>{{ event.description }}</textarea>
+    <input type="date" name="date" value="{{ event.date }}" required>
+    <input type="text" name="location" value="{{ event.location }}" required>
+    <button type="submit">Update Event</button>
+</form>
+
+{% endblock %}
+</body>
+</html>
